@@ -8,6 +8,7 @@ public class AiPath : MonoBehaviour
 
     private List<Transform> nodes = new List<Transform>();
 
+    // Creates path for Ai to travel
     void OnDrawGizmosSelected()
     {
         Gizmos.color = lineColor;
@@ -22,7 +23,7 @@ public class AiPath : MonoBehaviour
                 nodes.Add(pathTransforms[i]);
             }
         }
-
+        
         for (int i = 0; i < nodes.Count; i++)
         {
             Vector3 currentNode = nodes[i].position;

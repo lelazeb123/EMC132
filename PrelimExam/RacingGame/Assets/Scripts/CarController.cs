@@ -32,7 +32,7 @@ public class CarController : MonoBehaviour
         Downforce();
     }
 
-    // Car controls, driving
+    // Car controls, driving and braking
     private void Drive()
     {
         
@@ -83,7 +83,7 @@ public class CarController : MonoBehaviour
         inputManager = GetComponent<Inputs>();
     }
 
-    // Creates downforce, increase ground grip 
+    // Creates downforce, increase ground grip on corners
     private void Downforce()
     {
         rb.AddForce(-transform.up * DownForceValue * rb.velocity.magnitude);

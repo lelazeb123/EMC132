@@ -11,14 +11,14 @@ public class Laps : MonoBehaviour
     public GameObject GameOverUI;
     public static bool disabled = false;
 
-
+    // lap and checkpoint values
+    // player can't finish a lap if all checkpoints are not passed consecutively 
     private void Start()
     {
         numCheckpoint = GameObject.Find("Checkpoints").transform.childCount;
         currentCheckpoint = 1; 
         numLaps = 1; 
         currentLap = 1; 
-    
     }
 
     private void Update()
@@ -36,6 +36,7 @@ public class Laps : MonoBehaviour
         }
     }
 
+    // when cars pass checkpoint currentCheckpoint increments
     private void OnTriggerEnter (Collider checkCollider)
     {
         if (checkCollider.name == currentCheckpoint.ToString())

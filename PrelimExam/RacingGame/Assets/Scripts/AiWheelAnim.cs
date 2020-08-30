@@ -9,7 +9,7 @@ public class AiWheelAnim : MonoBehaviour
     private Vector3 wheelPosition = new Vector3();
     private Quaternion wheelRotation = new Quaternion();
 
-    // Update is called once per frame
+    // Ai Wheels animation
     void Update()
     {
         targetWheel.GetWorldPose(out wheelPosition, out wheelRotation);

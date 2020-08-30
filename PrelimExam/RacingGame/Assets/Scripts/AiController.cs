@@ -55,7 +55,7 @@ public class AiController : MonoBehaviour
         AiDownforce();
         AiBraking();
     }
-
+    
     private void AiSteer()
     {
         Vector3 relativeVector = transform.InverseTransformPoint(nodes[currentNode].position);
@@ -81,6 +81,7 @@ public class AiController : MonoBehaviour
         
     }
 
+    // the Ai will follow the path created
     private void PointDistance() 
     {
         if(Vector3.Distance(transform.position, nodes[currentNode].position) < 5f)
@@ -94,11 +95,13 @@ public class AiController : MonoBehaviour
         }
     }
 
+    // Creates downforce, increase ground grip on corners
     private void AiDownforce()
     {
         rb.AddForce(-transform.up * DownForceValue * rb.velocity.magnitude);
     }
 
+    
     private void AiBraking()
     {
         if (isBraking){

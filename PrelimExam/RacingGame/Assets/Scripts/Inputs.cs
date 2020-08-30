@@ -8,7 +8,7 @@ public class Inputs : MonoBehaviour
     public float horizontal;
     public bool handbrake;
 
-    // Update is called once per frame
+    // Get inputs from keyboard
     void FixedUpdate()
     {
         vertical = Input.GetAxis("Vertical");
